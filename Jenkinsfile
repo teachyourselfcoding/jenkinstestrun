@@ -7,5 +7,11 @@ pipeline {
                 sh 'python --version'
             }
         }
+
+        stage('2ndbuild') {
+            steps {
+                sh 'building again"'
+            }
+        }
     }
 }
