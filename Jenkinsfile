@@ -2,15 +2,25 @@ pipeline {
     agent any
     stages {
         stage('build') {
-            steps {
-                sh 'echo "Hello World"'
-                sh 'python --version'
+            stages{
+                stage('First build'){
+                    steps {
+                        sh 'echo "Hello World"'
+                        sh 'python --version'
+                    }
+                }
+                stage('Second build'){
+                    steps {
+                        sh 'echo "This is my second build"'
+                    }
+                }                
             }
+            
         }
 
-        stage('2ndbuild') {
+        stage('run') {
             steps {
-                sh 'echo "building again"'
+                sh 'echo "I am running! "'
             }
         }
     }
