@@ -12,4 +12,5 @@ pipeline {
                 sh 'echo "Second step run"'
             }
         }
+    }
 }
