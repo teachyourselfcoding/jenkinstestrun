@@ -8,8 +8,8 @@ pipeline {
             }
         }
         stage('run') {
-                steps {
+            steps {
                 sh 'echo "Second step run"'
             }
-    }
+        }
 }
