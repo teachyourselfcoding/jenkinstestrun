@@ -1,19 +1,21 @@
-@echo off
-setlocal enableextensions
-pushd %~dp0
+@ECHO OFF
 
-cd ..
-call gradlew clean shadowJar
+REM create bin directory if it doesn't exist
+if not exist ..\bin mkdir ..\bin
 
-cd build\libs
-for /f "tokens=*" %%a in (
-    'dir /b *.jar'
-) do (
-    set jarloc=%%a
+REM delete output from previous run
+del ACTUAL.TXT
+
+REM compile the code into the bin folder
+javac  -cp ..\src -Xlint:none -d ..\bin ..\src\main\java\Duke.java
+IF ERRORLEVEL 1 (
+    echo ********** BUILD FAILURE **********
+    exit /b 1
 )
+REM no error here, errorlevel == 0
 
-java -jar %jarloc% < ..\..\text-ui-test\input.txt > ..\..\text-ui-test\ACTUAL.TXT
+REM run the program, feed commands from input.txt file and redirect the output to the ACTUAL.TXT
+java -classpath ..\bin Duke < input.txt > ACTUAL.TXT
 
-cd ..\..\text-ui-test
-
-FC ACTUAL.TXT EXPECTED.TXT >NUL && ECHO Test passed! || Echo Test failed!
+REM compare the output to the expected output
+FC ACTUAL.TXT EXPECTED.TXT
