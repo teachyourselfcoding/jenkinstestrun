@@ -7,5 +7,9 @@ pipeline {
                 sh 'python --version'
             }
         }
+        stage('run') {
+                steps {
+                sh 'echo "Second step run"'
+            }
     }
 }
