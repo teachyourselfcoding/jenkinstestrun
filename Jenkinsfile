@@ -10,7 +10,7 @@ pipeline {
 
         stage('2ndbuild') {
             steps {
-                sh 'building again"'
+                sh 'echo "building again"'
             }
         }
     }
