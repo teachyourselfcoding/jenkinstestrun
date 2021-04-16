@@ -31,10 +31,10 @@ pipeline {
             //
         }
         success {
-            echo 'build success'
+            sh 'echo "build success"'
         }
         failure {
-            echo 'build failed'
+            sh 'echo "build failed"'
         }
     }
 }
