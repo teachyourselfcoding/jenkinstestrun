@@ -16,12 +16,11 @@ pipeline {
                 }                
             }
             
+        }
 
         stage('run') {
             steps {
-                sh 'echo "Running now"'
-                }
-
+                sh 'echo "I am running! "'
             }
         }
     }
