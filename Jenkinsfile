@@ -21,7 +21,8 @@ pipeline {
         stage('run') {
             steps {
                 sh './scripts.sh'
-                sh 'echo "I am running! "'
+                sh 'todo read book'
+                sh 'deadline Assignment 2 /Monday 2359'
             }
         }
     }
