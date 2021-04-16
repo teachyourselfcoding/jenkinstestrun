@@ -22,6 +22,7 @@ pipeline {
             steps {
                 sh './scripts.sh'
                 sh 'todo read book'
+                sh 'echo "Done reading book"'
                 sh 'deadline Assignment 2 /Monday 2359'
             }
         }
