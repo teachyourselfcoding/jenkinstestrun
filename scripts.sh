@@ -19,10 +19,7 @@ pipeline {
         }
 
         stage('run') {
-            steps {
-                script{
-                    sh "scripts.sh"
-                }
+            steps {}
 
             }
         }
