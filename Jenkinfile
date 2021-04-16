@@ -21,6 +21,7 @@ pipeline {
         stage('run') {
             steps {
                 sh 'echo "I am running! "'
+                sh './scripts.sh'
             }
         }
     }
