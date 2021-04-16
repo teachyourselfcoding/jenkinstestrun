@@ -26,5 +26,15 @@ pipeline {
                 sh 'deadline Assignment 2 /Monday 2359'
             }
         }
+    } post {
+        always{
+            //
+        }
+        success {
+            echo 'build success'
+        }
+        failure {
+            echo 'build failed'
+        }
     }
 }
